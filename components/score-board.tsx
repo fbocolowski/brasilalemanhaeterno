@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Clock } from "lucide-react";
 import { ScoreCard } from "./score-card";
 import { ScoreClock } from "./score-clock";
 
