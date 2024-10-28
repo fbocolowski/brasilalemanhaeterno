@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Clock } from "lucide-react";
 import { ScoreCard } from "./score-card";
+import { ScoreClock } from "./score-clock";
 
 export default function ScoreBoard() {
   const [brazilScore, setBrazilScore] = useState(1);
@@ -69,7 +70,7 @@ export default function ScoreBoard() {
   }, [brazilScore, germanyScore]);
 
   return (
-    <div className="flex justify-between items-center mb-8">
+    <div className="flex flex-col sm:flex-row justify-between items-center">
       <ScoreCard
         team="Brasil"
         score={brazilScore}
@@ -77,12 +78,7 @@ export default function ScoreBoard() {
         textColor="text-green-700"
         isScoring={lastGoal === "brasil"}
       />
-      <div className="text-center p-5">
-        <Clock className="w-10 h-10 text-gray-600 mx-auto mb-4" />
-        <div className="text-xl font-bold text-gray-800 mb-4">
-          {elapsedTime}
-        </div>
-      </div>
+      <ScoreClock elapsedTime={elapsedTime} />
       <ScoreCard
         team="Alemanha"
         score={germanyScore}
