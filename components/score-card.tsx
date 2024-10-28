@@ -1,4 +1,18 @@
-export function ScoreCard({ team, score, flag, textColor, isScoring }) {
+interface ScoreCardProps {
+  team: string;
+  score: number;
+  flag: string;
+  textColor: string;
+  isScoring: boolean;
+}
+
+export function ScoreCard({
+  team,
+  score,
+  flag,
+  textColor,
+  isScoring,
+}: ScoreCardProps) {
   return (
     <div className="text-center">
       <h2
